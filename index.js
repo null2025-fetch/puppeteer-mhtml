@@ -8,11 +8,13 @@ const API_KEY = process.env.API_KEY || "";
 
 app.get("/", async (req, res) => {
   try {
+    // Check API key
     if (API_KEY && req.get("x-api-key") !== API_KEY) {
       console.log("Unauthorized request");
       return res.status(401).send("Unauthorized");
     }
 
+    // Get URL from query
     const url = (req.query.url || "").trim();
     if (!/^https?:\/\//i.test(url)) {
       console.log("Invalid or missing URL:", url);
