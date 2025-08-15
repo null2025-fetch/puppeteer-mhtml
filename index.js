@@ -1,17 +1,4 @@
 const express = require("express");
-const puppeteer = require("puppeteer");
-
-const app = express();
-const PORT = process.env.PORT || 3000;
-const API_KEY = process.env.API_KEY || "";
-
-app.get("/", async (req, res) => {
-  try {
-    if (API_KEY && req.get("x-api-key") !== API_KEY) {
-      return res.status(401).send("Unauthorized");
-    }
-
-    const express = require("express");
 const puppeteer = require("puppeteer-core");
 const chromium = require("chrome-aws-lambda");
 
@@ -21,13 +8,11 @@ const API_KEY = process.env.API_KEY || "";
 
 app.get("/", async (req, res) => {
   try {
-    // Check API key
     if (API_KEY && req.get("x-api-key") !== API_KEY) {
       console.log("Unauthorized request");
       return res.status(401).send("Unauthorized");
     }
 
-    // Get URL from query
     const url = (req.query.url || "").trim();
     if (!/^https?:\/\//i.test(url)) {
       console.log("Invalid or missing URL:", url);
@@ -70,4 +55,3 @@ app.get("/", async (req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Puppeteer MHTML service listening on port ${PORT}`));
-

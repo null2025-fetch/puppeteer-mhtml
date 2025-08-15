@@ -1,9 +1,8 @@
 {
   "name": "puppeteer-mhtml",
   "version": "1.0.0",
-  "engines": {
-    "node": ">=20"
-  },
+  "description": "Gmail FETCH label → Puppeteer MHTML service",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
@@ -11,5 +10,10 @@
     "chrome-aws-lambda": "^1.20.1",
     "express": "^4.18.2",
     "puppeteer-core": "^24.16.2"
-  }
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "author": "Shane Mathis",
+  "license": "MIT"
 }

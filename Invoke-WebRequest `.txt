@@ -1,0 +1,4 @@
+Invoke-WebRequest `
+    -Uri "https://puppeteer-mhtml-fetch.onrender.com?url=https://example.com" `
+    -Headers @{ "x-api-key" = "cc222776b753b8e7e69555bb4db2e583" } `
+    -OutFile "page.mhtml"

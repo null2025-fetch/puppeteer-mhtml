@@ -1,0 +1,7 @@
+cc222776b753b8e7e69555bb4db2e583
+
+curl -i "https://puppeteer-mhtml.onrender.com?url=https://example.com" -H "x-api-key: cc222776b753b8e7e69555bb4db2e583" --output page.mhtml
+Invoke-WebRequest `
+    -Uri "http://localhost:3000?url=https://example.com" `
+    -Headers @{ "x-api-key" = "cc222776b753b8e7e69555bb4db2e583" } `
+    -OutFile "page.mhtml"
